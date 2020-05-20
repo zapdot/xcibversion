@@ -1,13 +1,14 @@
 #!/usr/bin/env bash
 
-USAGE="Usage:\n${0##*/} [--interactive|-i] [--build=SPECIFIC_BUILD] [--path=PATH][--dry-run]"
+USAGE="Usage:\n${0##*/} [--interactive|-i] [--build=SPECIFIC_BUILD] [--path=PATH] [--dry-run]"
 arguments=""
 WORKDIR="."
 for i in "$@"
 do
   case $i in
     --help)
-      printf "${USAGE}"
+      printf "${USAGE}\n"
+      exit
       ;;
     -i|--interactive)
       INTERACTIVE=1
